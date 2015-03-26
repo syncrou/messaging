@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @rule.name %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @rule.subject %>
+</p>
+
+<p>
+  <strong>Rule:</strong>
+  <%= @rule.rule %>
+</p>
+
+<p>
+  <strong>Rule Body:</strong>
+  <%= @rule.rule_body %>
+</p>
+
+<p>
+  <strong>Deliver At:</strong>
+  <%= @rule.deliver_at %>
+</p>
+
+<p>
+  <strong>Extra 1:</strong>
+  <%= @rule.extra_var_1 %>
+</p>
+
+<p>
+  <strong>Extra 2:</strong>
+  <%= @rule.extra_var_2 %>
+</p>
+
+<p>
+  <strong>Extra 3:</strong>
+  <%= @rule.extra_var_3 %>
+</p>
+
+<p>
+  <strong>Extra 4:</strong>
+  <%= @rule.extra_var_4 %>
+</p>
+
+<p>
+  <strong>Extra 5:</strong>
+  <%= @rule.extra_var_5 %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @rule.customer_id %>
+</p>
+
+<p>
+  <strong>Rule type:</strong>
+  <%= @rule.rule_type %>
+</p>
+
+<%= link_to 'Edit', edit_rule_path(@rule) %> |
+<%= link_to 'Back', rules_path %>

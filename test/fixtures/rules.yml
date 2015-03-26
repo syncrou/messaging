@@ -1,0 +1,34 @@
+# == Schema Information
+#
+# Table name: rules
+#
+#  id          :integer          not null, primary key
+#  rule        :text
+#  rule_body   :text
+#  extra_var_1 :string(255)
+#  extra_var_2 :string(255)
+#  extra_var_3 :string(255)
+#  customer_id :integer
+#  name        :string(255)
+#  rule_type   :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  deliver_at  :string(255)
+#  extra_var_4 :string(255)
+#  state       :string(255)
+#  subject     :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  body: MyText
+  customer_id: 1
+  name: MyString
+  rule_type: MyString
+
+two:
+  body: MyText
+  customer_id: 1
+  name: MyString
+  rule_type: MyString

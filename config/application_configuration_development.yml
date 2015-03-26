@@ -1,0 +1,25 @@
+onramp_dev:
+  twilio_sid: ""
+  twilio_token: ""
+
+bi_dev_email:
+  :address: ""
+  :port: 587
+  :domain: ""
+  :user_name: ""
+  :password: ""
+  :authentication: :plain
+  :enable_starttls_auto: true
+
+onramp_dev_email:
+  :address: ""
+  :port: 25000 
+  :domain: ""
+  :user_name: ""
+  :password: ""
+  :authentication: :login
+  :enable_starttls_auto: true
+
+ #Test email
+test_email:
+  send_to: ""

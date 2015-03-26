@@ -1,0 +1,31 @@
+<h1>Listing accountings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Invoiced</th>
+      <th>Paid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accountings.each do |accounting| %>
+      <tr>
+        <td><%= accounting.customer_id %></td>
+        <td><%= accounting.invoiced %></td>
+        <td><%= accounting.paid %></td>
+        <td><%= link_to 'Show', accounting %></td>
+        <td><%= link_to 'Edit', edit_accounting_path(accounting) %></td>
+        <td><%= link_to 'Destroy', accounting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accounting', new_accounting_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @accounting.customer_id %>
+</p>
+
+<p>
+  <strong>Invoiced:</strong>
+  <%= @accounting.invoiced %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @accounting.paid %>
+</p>
+
+<%= link_to 'Edit', edit_accounting_path(@accounting) %> |
+<%= link_to 'Back', accountings_path %>

@@ -1,0 +1,48 @@
+<h1>Customer Listing</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Control</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Email Fee</th>
+      <th>Sms Fee</th>
+      <th>Email</th>
+      <th>Sms</th>
+      <th>Send</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.control.friendly_name if customer.control.present? %></td>
+        <td><%= customer.phone %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.email_fee %></td>
+        <td><%= customer.sms_fee %></td>
+        <td><%= customer.send_email %></td>
+        <td><%= customer.send_sms %></td>
+        <td>
+          <%= link_to 'Sms', new_sms_path(:customer => customer) %>
+          <%= link_to 'Email', new_email_path(:customer => customer) %>
+        </td>
+        <td>
+           <%= link_to 'Edit', edit_customer_path(customer) %>
+           <%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %>
+       </td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %></br/>
+<%= link_to 'Controls', controls_path %></br/>
+<%= link_to 'Rules', rules_path %><br/>
+<%= link_to 'Scheduler', '/scheduler' %>

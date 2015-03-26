@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Control:</strong>
+  <%= @customer.control.friendly_name if @customer.control.present? %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @customer.phone if @customer.phone.present? %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email if @customer.email.present? %>
+</p>
+<p>
+
+  <strong>Email Fee:</strong>
+  <%= @customer.email_fee %>
+</p>
+
+<p>
+  <strong>Sms Fee::</strong>
+  <%= @customer.sms_fee %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.send_email %>
+</p>
+
+<p>
+  <strong>Sms:</strong>
+  <%= @customer.send_sms %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

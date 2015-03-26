@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: controls
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#  friendly_name :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  name: MyString
+  twilio_api: MyString
+
+two:
+  customer_id: 1
+  name: MyString
+  twilio_api: MyString

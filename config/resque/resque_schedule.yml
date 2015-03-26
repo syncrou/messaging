@@ -1,0 +1,38 @@
+#
+# N.B. You MUST specify both
+#      class
+#      custom_job_class
+#
+# so that resque-scheduler will invoke scheduled on our ResqueJob class. If you don't, it will bypass
+# Resque#enqueue and use Resque::Job#create which doesn't run any before_ hooks which can be frustrating
+# if your job class extends with various plugins.
+
+# Run every hour 
+load_rules:
+  cron: "0 * * * *" 
+  class: LoadRulesJob
+  custom_job_class: LoadRulesJob
+  queue: general
+  args:
+  rails_env: development, production
+  description: "Loads the rules and converts them to sms's"
+    
+# Run every 5 minutes
+send_sms:
+  cron: "*/5 * * * *" 
+  class: SendSmsJob
+  custom_job_class: SendSmsJob
+  queue: general
+  args:
+  rails_env: development, production
+  description: "Send out all undelivered sms's that fall within the correct criteria"
+
+# Run every 5 minutes
+send_email:
+  cron: "*/5 * * * *" 
+  class: SendEmailJob
+  custom_job_class: SendEmailJob
+  queue: general
+  args:
+  rails_env: development, production
+  description: "Send out all undelivered email's that fall within the correct criteria"

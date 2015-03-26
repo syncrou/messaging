@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: accountings
+#
+#  id          :integer          not null, primary key
+#  customer_id :integer
+#  invoiced    :integer
+#  paid        :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  invoiced: 9.99
+  paid: 9.99
+
+two:
+  customer_id: 1
+  invoiced: 9.99
+  paid: 9.99

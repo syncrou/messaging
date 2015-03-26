@@ -1,0 +1,27 @@
+<h1>Listing controls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @controls.each do |control| %>
+      <tr>
+        <td><%= control.friendly_name %></td>
+        <td><%= link_to 'Show', control %></td>
+        <td><%= link_to 'Edit', edit_control_path(control) %></td>
+        <td><%= link_to 'Destroy', control, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Control', new_control_path %>

@@ -1,0 +1,3 @@
+class RemoteConnect < BaseConnect
+
+end

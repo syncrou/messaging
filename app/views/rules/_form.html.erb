@@ -1,0 +1,64 @@
+<%= form_for(@rule) do |f| %>
+  <% if @rule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rule.errors.count, "error") %> prohibited this rule from being saved:</h2>
+
+      <ul>
+      <% @rule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%=h f.text_field :name, :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :rule %><br>
+    <%= f.text_area :rule, :size => "50 x 10" %>
+  </div>
+  <div class="field">
+    <%= f.label :rule_body %><br>
+    <%= f.text_area :rule_body, :size => "50 x 10" %>
+  </div>
+  <div class="field">
+    <%= f.label :to_deliver %><br>
+    <%= f.text_area :deliver_at, :size => "50 x 1" %>
+  </div>
+  <div class="field">
+    <%= f.label :extra_var_1 %><br>
+    <%=h f.text_field :extra_var_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :extra_var_2 %><br>
+    <%=h f.text_field :extra_var_2 %>
+  </div>
+    <%= f.label :extra_var_3 %><br>
+    <%=h f.text_field :extra_var_3 %>
+  </div>
+  <div>
+    <%= f.label :extra_var_4 %><br>
+    <%=h f.text_field :extra_var_4 %>
+  </div>
+  <div>
+    <%= f.label :extra_var_5 %><br>
+    <%=h f.text_field :extra_var_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%=h f.text_field :subject, :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br>
+    <%= f.number_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :rule_type %><br>
+    <%= f.select :rule_type, [ 'SMS', 'Email' ] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

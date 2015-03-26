@@ -1,0 +1,40 @@
+<h1>Rules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Rule</th>
+      <th>Body</th>
+      <th>Deliver At</th>
+      <th>Customer</th>
+      <th>State</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rules.each do |rule| %>
+      <tr>
+        <td><%=h rule.name %></td>
+        <td><%=h rule.rule_type %></td>
+        <td><%=h rule.rule[0..20] %>...</td>
+        <td><%=h rule.rule_body[0..20] %>...</td>
+        <td><%=h rule.deliver_at %></td>
+        <td><%=h rule.customer.name %></td>
+        <td><%= build_state_url(rule) %></td>
+        <td><%= link_to 'View', rule %>
+        <%= link_to 'Edit', edit_rule_path(rule) %>
+        <%= link_to 'Remove', rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rule', new_rule_path %></br/>
+<%= link_to 'Controls', controls_path %></br/>
+<%= link_to 'Customers', customers_path %><br/>
+<%= link_to 'Scheduler', '/scheduler' %>

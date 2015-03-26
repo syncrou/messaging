@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: customers
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  email_fee  :integer
+#  sms_fee    :integer
+#  send_sms   :boolean
+#  send_email :boolean
+#  control_id :integer
+#  phone      :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  connection: MyString
+
+two:
+  name: MyString
+  connection: MyString
