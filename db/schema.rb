@@ -67,10 +67,10 @@ ActiveRecord::Schema.define(version: 20140211131031) do
     t.string   "name"
     t.integer  "customer_id"
     t.datetime "to_deliver"
+    t.integer  "repeat"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "repeat"
     t.string   "subject"
   end
 
