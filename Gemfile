@@ -54,8 +54,6 @@ gem 'kgio', '2.9.2'
 
 gem 'capistrano', group: :development
 
-# Use debugger
-gem 'debugger', group: [:development, :test]
 
 # Extra stuff
 gem 'annotate', '~>2.5.0'
