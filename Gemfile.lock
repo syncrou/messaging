@@ -499,6 +499,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 4.0.0)
   devise
+  factory_girl
   factory_girl_rails
   flog
   jbuilder (~> 1.2)
