@@ -1,7 +1,6 @@
 #
-# N.B. You MUST specify both
-#      class
-#      custom_job_class
+#      You MUST specify both
+#      class, custom_job_class
 #
 # so that resque-scheduler will invoke scheduled on our ResqueJob class. If you don't, it will bypass
 # Resque#enqueue and use Resque::Job#create which doesn't run any before_ hooks which can be frustrating
