@@ -53,6 +53,7 @@ gem 'raindrops', '0.13.0'
 gem 'kgio', '2.9.2'
 
 gem 'capistrano', group: :development
+gem 'flog', group: :development
 
 
 # Extra stuff
