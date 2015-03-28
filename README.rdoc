@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Messaging is a Rails app backed by Mysql, Redis, Resque that allows creation of rules to be run against 3rd party
+databases.  The rules can use erb and variables to render email or sms text body - To be sent out on a given schedule.
 
-Things you may want to cover:
+To set up and run
 
-* Ruby version
+* Clone the app
 
-* System dependencies
+* Check your ruby version - (or rvm) currently on Ruby 2.0 p247
 
-* Configuration
+* Run <tt>bundle install</tt>
 
-* Database creation
+* Run redis
 
-* Database initialization
+* Setup Resque
 
-* How to run the test suite
+* Open up localhost:3000 - and start creating rules
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* If you start the Resque scheduler it will send out the appropriate
+messages on the schedule set in <tt>config/resque/resque_schedule.yml</tt>
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
