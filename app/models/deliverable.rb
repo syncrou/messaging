@@ -23,8 +23,8 @@ class Deliverable < ActiveRecord::Base
   validates_presence_of :to, :from, :cents, :accounting_id
   validate :to_and_to_deliver_are_unique, :on => :create
 
-  validates_length_of :to, is: 10, if: Proc.new { |x| x.is_a?(Sms) }
-  validates_length_of :from, is: 10, if: Proc.new { |x| x.is_a?(Sms) }
+  validates_length_of :to, is: 10, if: Proc.new { |x| x.sendable.is_a?(Sms) }
+  validates_length_of :from, is: 10, if: Proc.new { |x| x.sendable.is_a?(Sms) }
 
   private
 

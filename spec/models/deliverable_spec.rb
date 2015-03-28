@@ -26,5 +26,25 @@ describe Deliverable do
       expect(sms.valid?).to eq true
       expect(sms.save).to eq false
     end
+
+    it "will not be valid if the to phone number is under 10 characters" do
+      FactoryGirl.create :customer
+      FactoryGirl.create :accounting
+
+      sms = Sms.new(name: 'EEEYY', customer_id: Customer.last.id, to_deliver: 1569875434, body: "blah blah", to_phone: 4569875434, accounting: Accounting.last)
+      sms.save
+      d = Deliverable.new(to: 234, from: 1234568734, cents: 1, accounting_id: 1, sendable_id: Sms.last.id, sendable_type: 'Sms')
+      expect(d.save).to eq false
+    end
+
+    it "will not be valid if from to phone number is under 10 characters" do
+      FactoryGirl.create :customer
+      FactoryGirl.create :accounting
+
+      sms = Sms.new(name: 'EEEYY', customer_id: Customer.last.id, to_deliver: 1569875434, body: "blah blah", to_phone: 4569875434, accounting: Accounting.last)
+      sms.save
+      d = Deliverable.new(from: 234, to: 1234568734, cents: 1, accounting_id: 1, sendable_id: Sms.last.id, sendable_type: 'Sms')
+      expect(d.save).to eq false
+    end
   end
 end
