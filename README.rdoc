@@ -1,7 +1,8 @@
 == README
 
 Messaging is a Rails app backed by Mysql, Redis, Resque that allows creation of rules to be run against 3rd party
-databases.  The rules can use erb and variables to render email or sms text body - To be sent out on a given schedule.
+databases.  The rules can use erb and variables to render email or sms text body - Which can be sent out 
+on a given schedule.
 
 To set up and run
 
