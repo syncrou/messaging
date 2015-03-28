@@ -62,3 +62,8 @@ gem 'sinatra'
 gem 'state_machine'
 gem 'devise'
 gem 'cancan'
+
+group :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+end
