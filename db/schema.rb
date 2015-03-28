@@ -69,8 +69,6 @@ ActiveRecord::Schema.define(version: 20140211131031) do
     t.datetime "to_deliver"
     t.integer  "repeat"
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "subject"
   end
 
