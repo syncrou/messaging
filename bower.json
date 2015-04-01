@@ -4,7 +4,8 @@
     "dependencies": {
       // "threex"      : "git@github.com:rharriso/threex.git",
       // "gsvpano.js"  : "https://github.com/rharriso/GSVPano.js/blob/master/src/GSVPano.js"
-      "angular": "v1.3.15"
+      "angular": "v1.3.15",
+      "bootstrap-sass-official": "latest"
     }
   },
   "vendor": {

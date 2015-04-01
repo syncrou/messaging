@@ -17,6 +17,11 @@ module Messaging
     config.autoload_paths += Dir["#{config.root}/jobs/**/"]
     config.autoload_paths += Dir["#{config.root}/jobs"]
 
+    config.assets.paths << Rails.root.join("lib","assets","bower_components")
+    config.assets.paths << Rails.root.join("lib","assets","bower_components","bootstrap-sass-official","assets","fonts")
+
+    config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff)$)
+
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
