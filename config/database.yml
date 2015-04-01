@@ -9,6 +9,7 @@ development:
 test:
   database: abstract_test
   adapter: mysql2
-  username: travis
+  username: root
+  password: buttons
   encoding: utf8
 
