@@ -6,7 +6,7 @@ test:
 
 development:
   database: abstract_dev
-  adaptor: mysql2
+  adapter: mysql2
   username: root
   password: buttons
 
