@@ -4,3 +4,6 @@ rvm:
 
 before_script:
   - mysql -e 'create database abstract_test;'
+
+services:
+  - redis-server
