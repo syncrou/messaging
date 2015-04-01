@@ -1,6 +1,8 @@
 == README 
 
 
+{<img src="https://travis-ci.org/syncrou/messaging.svg?branch=develop" alt="Build Status" />}[https://travis-ci.org/syncrou/messaging]
+
 Messaging is a Rails app backed by Mysql, Redis, Resque that allows creation of rules to be run against 3rd party
 databases.  The rules can use erb and variables to render email or sms text body - Which can be sent out 
 on a given schedule.

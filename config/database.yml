@@ -1,0 +1,12 @@
+test:
+  database: abstract_test
+  adapter: mysql2
+  username: travis
+  encoding: utf8
+
+development:
+  database: abstract_dev
+  adapter: mysql2
+  username: root
+  password: buttons
+

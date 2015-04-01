@@ -2,19 +2,30 @@
 <html>
 <head>
   <title>Messaging</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application"  %>
   <%= csrf_meta_tags %>
    <p class="notice"><%= notice %></p> 
    <p class="alert"><%= alert %></p>
 </head>
 <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container" ng-app='app.loginApp' ng-controller='LoginCtrl'>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">{{ title }}</a>
+        </div>
+        <%#= render 'devise/menu/registration_items' %>
+        <%= render 'devise/menu/login_items' %>
+        <%= yield %>
+      </div>
+    </nav>
 
-   <ul class="hmenu">
-    <%= render 'devise/menu/registration_items' %>
-    <%= render 'devise/menu/login_items' %>
-   </ul>
-    <%= yield %>
 
 </body>
 </html>

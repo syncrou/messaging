@@ -21,10 +21,12 @@ describe Deliverable do
       expect(sms.save).to eq true
     end
 
-    it "fails validation if the to and from phone numbers are unique" do
-      sms = Sms.new(name: 'EEEYY', customer_id: Customer.last.id, to_deliver: 4569875434, body: "blah blah", to_phone: 4569875434, accounting: Accounting.last)
+    it "fails validation if the to_deliver phone is not unique within the same sendable id" do
+      phone = Customer.last.phone.to_i
+      sms = Sms.new(name: 'EEEYY', customer_id: Customer.last.id, to_deliver: phone, body: "blah blah", to_phone: phone, accounting: Accounting.last)
       expect(sms.valid?).to eq true
-      expect(sms.save).to eq false
+      expect(sms.save).to eq true
+      expect(sms.send(:to_deliverable)).to eq false
     end
 
     it "will not be valid if the to phone number is under 10 characters" do

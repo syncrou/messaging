@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - ruby-2.0.0-p247
+
+before_script:
+  - mysql -e 'create database abstract_test;'
+
+services:
+  - redis-server
