@@ -17,6 +17,8 @@ Messaging::Application.routes.draw do
 
   resources :customers
 
+  get 'example' => 'example#index'
+
   match '/responses' => SmsResponse, :anchor => false, :via => :get
 
   match 'rules/:id/deactivate', to: 'rules#deactivate', :as => 'deactivate_rule', :via => :get
