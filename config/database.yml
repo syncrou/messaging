@@ -4,3 +4,9 @@ test:
   username: travis
   encoding: utf8
 
+development:
+  database: abstract_dev
+  adaptor: mysql2
+  username: root
+  password: buttons
+
