@@ -1,29 +1,21 @@
-          <!--<form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-            </form>-->
+<% content_for :sessions do %>
+  <div id="navbar" class="navbar-collapse collapse">
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html=> { class: "navbar-form navbar-right" }) do |f| %>
+      <div class="form-group">
+      <%= f.email_field :email, :autofocus => true, :class=>"form-control" %>
+      </div>
 
-<div id="navbar" class="navbar-collapse collapse">
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html=> { class: "navbar-form navbar-right" }) do |f| %>
-    <div class="form-group">
-    <%= f.email_field :email, :autofocus => true, :class=>"form-control" %>
-    </div>
+      <div class="form-group">
+        <%= f.password_field :password, :class=>"form-control" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.password_field :password, :class=>"form-control" %>
-    </div>
+      <%# if devise_mapping.rememberable? -%>
+      <!--<div><%#= f.check_box :remember_me %> <%= f.label :remember_me %></div>-->
+      <%# end -%>
+      <%#= render "devise/shared/links" %>
 
-    <%# if devise_mapping.rememberable? -%>
-    <!--<div><%#= f.check_box :remember_me %> <%= f.label :remember_me %></div>-->
-    <%# end -%>
-    <%#= render "devise/shared/links" %>
+      <button type="submit" class="btn btn-success">Sign in</button>
+    <% end %>
 
-    <button type="submit" class="btn btn-success">Sign in</button>
-  <% end %>
-
-</div><!--/.navbar-collapse -->
+  </div><!--/.navbar-collapse -->
+<% end %>

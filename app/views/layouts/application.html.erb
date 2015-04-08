@@ -22,11 +22,14 @@
         </div>
         <%#= render 'devise/menu/registration_items' %>
         <%#= render 'devise/menu/login_items' %>
-        <%= render template: 'devise/sessions/new' %>
+        <%#= render template: 'devise/sessions/new' %>
+        <%= yield(:sessions) %>
       </div>
     </nav>
     <%= render "devise/shared/links" %>
-    <%= yield %>
+    <% unless content_for?(:sessions) %>
+      <%= yield %>
+    <% end %>
 
 
 </body>
