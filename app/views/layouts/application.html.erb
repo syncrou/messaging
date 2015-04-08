@@ -21,10 +21,12 @@
           <a class="navbar-brand" href="#">{{ title }}</a>
         </div>
         <%#= render 'devise/menu/registration_items' %>
-        <%= render 'devise/menu/login_items' %>
-        <%= yield %>
+        <%#= render 'devise/menu/login_items' %>
+        <%= render template: 'devise/sessions/new' %>
       </div>
     </nav>
+    <%= render "devise/shared/links" %>
+    <%= yield %>
 
 
 </body>
